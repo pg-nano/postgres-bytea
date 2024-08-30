@@ -22,9 +22,6 @@
     "binary",
     "parser"
   ],
-  "dependencies": {
-    "obuf": "~1.1.2"
-  },
   "devDependencies": {
     "concat-stream": "2.0.0",
     "standard": "^17.0.0",

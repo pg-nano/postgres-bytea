@@ -1,6 +1,6 @@
 'use strict'
 
-const BufferList = require('obuf')
+const BufferList = require('./obuf')
 const { Transform } = require('stream')
 
 const State = {
