@@ -1,5 +1,3 @@
-var Buffer = require('buffer').Buffer;
-
 function OffsetBuffer() {
   this.offset = 0;
   this.size = 0;
@@ -128,7 +126,7 @@ OffsetBuffer.prototype.copy = function copy(target, targetOff, off, n) {
 
 OffsetBuffer.prototype.take = function take(n) {
   if (n === 0)
-    return new Buffer(0);
+    return Buffer.alloc(0);
 
   this.size -= n;
 
@@ -148,7 +146,7 @@ OffsetBuffer.prototype.take = function take(n) {
   }
 
   // Allocate and fill buffer
-  var out = new Buffer(n);
+  var out = Buffer.alloc(n);
   var toOff = 0;
   var startOff = this.offset;
   for (var i = 0; toOff !== n && i < this.buffers.length; i++) {
