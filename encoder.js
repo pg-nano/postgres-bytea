@@ -1,17 +1,14 @@
-'use strict'
-
-const { Transform } = require('stream')
-
+import stream from "stream";
+'use strict';
+const { Transform } = stream;
 class ByteaEncoder extends Transform {
-  constructor () {
-    super()
-    this.push('\\\\x')
-  }
-
-  _transform (chunk, encoding, callback) {
-    this.push(chunk.toString('hex'))
-    callback()
-  }
+    constructor() {
+        super();
+        this.push('\\\\x');
+    }
+    _transform(chunk, encoding, callback) {
+        this.push(chunk.toString('hex'));
+        callback();
+    }
 }
-
-module.exports = ByteaEncoder
+export default ByteaEncoder;
